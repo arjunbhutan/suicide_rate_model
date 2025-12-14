@@ -208,15 +208,13 @@ if page == "5. Train ML Model (See Accuracy Here!)":
         st.markdown("### Accuracy Scores")
         col1, col2 = st.columns(2)
         with col1:
-            st.metric("Male Model R² Score", f"{result['r2_male']:.4f}", delta="Near Perfect!")
+            st.metric("Male Model R² Score", f"{result['r2_male']:.4f}")
             st.metric("Male Model MAE", f"{result['mae_male']:.3f} per 100k")
         with col2:
-            st.metric("Female Model R² Score", f"{result['r2_female']:.4f}", delta="Near Perfect!")
+            st.metric("Female Model R² Score", f"{result['r2_female']:.4f}")
             st.metric("Female Model MAE", f"{result['mae_female']:.3f} per 100k")
         
-        st.success("Both models achieved R² > 0.99 — outstanding forecasting power!")
-        st.info("Models saved and ready for prediction!")
-
+       
 # Other pages (perfect as you wrote them)
 elif page == "0. View Raw Data":
     st.header("Step 0: Original Raw Dataset")
