@@ -38,7 +38,6 @@ suicide = clean_df[clean_df["GHO_CODE"] == "MH_12"][["Year", "DIM_NAME", "Numeri
 
 if page == "5. Train ML Model (See Accuracy Here!)":
     st.header("Step 5: Train Machine Learning Models")
-    st.markdown("**Click below → See full accuracy, R² score, MAE, training time — all on screen!**")
     
     if st.button("TRAIN MODELS NOW", type="primary", use_container_width=True):
         with st.spinner("Training Male & Female models..."):
@@ -49,8 +48,6 @@ if page == "5. Train ML Model (See Accuracy Here!)":
             
             training_time = time.time() - start_time
         
-        st.success("TRAINING COMPLETED SUCCESSFULLY!")
-        st.balloons()
         
         # BEAUTIFUL ACCURACY DISPLAY
         st.subheader("Model Performance Summary")
@@ -191,7 +188,6 @@ suicide = clean_df[clean_df["GHO_CODE"] == "MH_12"][["Year", "DIM_NAME", "Numeri
 # TRAIN MODEL PAGE — NOW FULLY WORKING WITH ACCURACY!
 if page == "5. Train ML Model (See Accuracy Here!)":
     st.header("Step 5: Train Machine Learning Models")
-    st.markdown("**Click below → See full accuracy, R² score, MAE, training time — all on screen!**")
     
     if st.button("TRAIN MODELS NOW", type="primary", use_container_width=True):
         with st.spinner("Training Male & Female models..."):
@@ -200,9 +196,7 @@ if page == "5. Train ML Model (See Accuracy Here!)":
             result = train_models()
             training_time = time.time() - start_time
         
-        st.success("TRAINING COMPLETED SUCCESSFULLY!")
-        st.balloons()
-        
+       
         # Beautiful accuracy display
         st.subheader("Model Performance Summary")
         col1, col2, col3, col4 = st.columns(4)
@@ -302,4 +296,3 @@ elif page == "6. Forecast & Predict Any Year":
     except:
         st.error("Train models first in Step 5!")
 
-st.sidebar.success("DEPLOYED & WORKING PERFECTLY!")
